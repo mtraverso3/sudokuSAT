@@ -1,0 +1,8 @@
+[package]
+name = "sudokuSAT"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rustsat = "0.7.4"
+rustsat-cadical = "0.7.4"
