@@ -68,7 +68,7 @@ fn solver_titles() -> Vec<Line<'static>> {
 fn current_solver_kind(idx: usize) -> SolverKind {
     match idx {
         0 => SolverKind::Sat,
-        // 1 => SolverKind::Backtracking,
+        1 => SolverKind::Backtracking,
         // 2 => SolverKind::ExactCover,
         _ => SolverKind::Sat,
     }
@@ -297,10 +297,7 @@ fn ui(f: &mut ratatui::Frame<'_>, app: &App) {
     if app.show_help {
         let area = centered_rect(80, 80, f.size());
         let help_lines = vec![
-            Line::from(Span::styled(
-                "Controls",
-                Style::default().add_modifier(Modifier::BOLD),
-            )),
+            Line::from(Span::styled("Controls", Style::default().add_modifier(Modifier::BOLD))),
             Line::from(""),
             Line::from(Span::styled("Global", Style::default().fg(Color::Yellow))),
             Line::from("  q: quit    ?,h: toggle help"),
@@ -308,23 +305,17 @@ fn ui(f: &mut ratatui::Frame<'_>, app: &App) {
             Line::from(Span::styled("Focus", Style::default().fg(Color::Yellow))),
             Line::from("  Tab: switch focus between Grid and Solver tabs"),
             Line::from(""),
-            Line::from(Span::styled(
-                "Grid editing",
-                Style::default().fg(Color::Yellow),
-            )),
+            Line::from(Span::styled("Grid editing", Style::default().fg(Color::Yellow))),
             Line::from("  Arrows: move cursor    0-9: set cell (0 clears)"),
             Line::from("  Backspace/Delete: clear current cell"),
             Line::from("  c: clear entire grid    s: solve with selected solver"),
             Line::from("  d: load sample default puzzle"),
             Line::from(""),
-            Line::from(Span::styled(
-                "Solver selection",
-                Style::default().fg(Color::Yellow),
-            )),
+            Line::from(Span::styled("Solver selection", Style::default().fg(Color::Yellow))),
             Line::from("  Left/Right: change solver tab"),
             Line::from("  0/1/2: jump to specific solver    Enter: back to Grid"),
             Line::from(""),
-            Line::from("Only the SAT solver is implemented right now."),
+            Line::from("SAT and Backtracking are implemented; ExactCover coming soon."),
             Line::from("The last solve time is shown in the Sudoku title and the status bar."),
             Line::from("Press Esc, ? or h to close this help."),
         ];
