@@ -10,6 +10,9 @@ cargo run --release
 ```
 
 ## TODO
+- [x] Add a user interface for inputting Sudoku puzzles
 - [ ] Add support for different Sudoku sizes (e.g., 4x4, 16x16)
 - [ ] Implement a more efficient encoding for Sudoku constraints
-- [ ] Add a user interface for inputting Sudoku puzzles
+- [ ] Implement backtracking solver
+- [ ] Implement an exact cover solver
+- [ ] Benchmarks
